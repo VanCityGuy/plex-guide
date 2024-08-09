@@ -4,14 +4,15 @@
     <style>
         /* General styles */
         body {
-            background-color: rgba(26, 26, 26, 0.8); /* Transparent dark grey overlay */
+            background-color: #010f05; /* Solid dark background */
             color: #fff; /* White text */
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-image: url('https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/DALL%C2%B7E%202024-05-08%2014.16.32%20-%20A%20clean%2C%20long%20vertical%20background%20image%20for%20a%20website%20with%20a%20dark%20theme%20suitable%20for%20a%20Plex%20guide.%20The%20background%20should%20have%20a%20simple%2C%20elegant%20design.webp'); /* Background image */
             background-size: cover;
-            background-blend-mode: screen; /* Blend mode for clarity */
+            background-attachment: fixed;
+            background-blend-mode: multiply; /* Enhanced blend mode for better readability */
+            background-position: center;
         }
 
         /* Title section */
@@ -30,8 +31,8 @@
 
         /* Section headers */
         h3 {
-            color: #E5A00D; /* Plex-themed orange */
-            font-size: 1.5em;
+            color: #0d5fd9; /* Blue */
+            font-size: 1.7em;
             margin-top: 40px;
             text-shadow: 1px 1px 2px #000, -1px -1px 2px #000; /* Grey/white outline */
         }
@@ -46,7 +47,7 @@
         /* Link styling */
         a {
             color: #E5A00D;
-            text-decoration: none;
+            text-decoration: underline;
         }
 
         /* Image styling */
@@ -56,6 +57,7 @@
             display: block;
             margin: 20px auto; /* Center images */
             border-radius: 8px; /* Soft rounded corners for a modern look */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
         }
 
         /* Smaller step 14 image */
@@ -82,6 +84,48 @@
         .content-block {
             border-bottom: 2px solid #333; /* Subtle dividers for content blocks */
             padding-bottom: 20px;
+        }
+
+        /* Back to Top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #E5A00D;
+            color: #000;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 14px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+        }
+
+        .back-to-top:hover {
+            background-color: #cc840c;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            h3 {
+                font-size: 1.4em;
+            }
+
+            img {
+                max-width: 100%;
+            }
+
+            .back-to-top {
+                bottom: 10px;
+                right: 10px;
+                padding: 8px 12px;
+                font-size: 12px;
+            }
         }
     </style>
 </head>
@@ -114,7 +158,7 @@
         <h3>5. Click on the settings icon located in the top right</h3>
         <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/8.png" alt="Settings Icon">
 
-        <h3>6. Within settings, Click on Manage Library Access</h3>
+        <h3>6. Within settings, Click on Manage Library Access</h></h3>
         <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/9.png" alt="Manage Library Access">
 
         <h3>7. If you have been invited to someone's server, you can accept the invite by clicking the check mark</h3>
@@ -136,29 +180,18 @@
         <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/15.png" alt="Unpin Other Categories">
 
         <h3>13. Click on Home, Your menu should now look like the image below</h3>
-        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/16.png" alt="Your Menu">
+        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/16.png" alt="Menu Overview">
 
-        <h3>14. You are now good to go and start streaming any movies and TV shows you want!</h3>
-        <p>For the best possible experience, follow the next steps below to make sure you have the best quality.</p>
-        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/17.png" class="small-image" alt="Start Streaming Content">
-    </div>
+        <h3 class="quality-header">Quality Settings:</h3>
 
-    <div class="new-section">
-        <h3 class="quality-header">Quality Settings</h3>
-        <p>Follow these next steps to ensure you have the best quality possible.</p>
+        <h3>14. Next, Click on your profile icon, then go to Quality</h3>
+        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/18.png" alt="Go to Quality" class="small-image">
 
-        <h3>1. Click on the settings icon located in the top right</h3>
-        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/8.png" alt="Settings Icon">
+        <h3>15. Under Video Quality, Click on Internet Streaming</h3>
+        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/20.png" alt="Internet Streaming">
 
-        <h3>2. Click on Quality</h3>
-        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/19.png" alt="Click on Quality">
-
-        <h3>3. Click on video quality, and choose "Maximum"</h3>
-        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/20.png" alt="Choose Maximum Quality">
-
-        <h3>4. Click on Save Changes, and you are now complete!</h3>
-        <p>Now it's time to enjoy your high-quality content!</p>
-        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/21.png" alt="Click on Save Changes">
+        <h3>16. Set both Home Streaming and Internet Streaming to Maximum</h3>
+        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/21.png" alt="Maximum Quality">
     </div>
 
     <div class="content-block">
