@@ -2,85 +2,264 @@
 <html>
 <head>
     <title>New Plex User Guide</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body style="background-color: #010f05; color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 20px; background-size: cover; background-attachment: fixed; background-blend-mode: multiply; background-position: center;">
+    <style>
+        /* General styles */
+        body {
+            background-color: #010f05; /* Solid dark background */
+            color: #fff; /* White text */
+            font-family: 'Roboto', sans-serif; /* Updated font */
+            margin: 0;
+            padding: 20px;
+            background-size: cover;
+            background-attachment: fixed;
+            background-blend-mode: multiply; /* Enhanced blend mode for better readability */
+            background-position: center;
+        }
 
-    <div class="header" style="text-align: center; color: orange; margin-bottom: 50px; background-color: rgba(26, 26, 26, 0.9); padding: 20px 0;">
-        <h1 style="font-weight: 700;">Welcome to Plex! <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/plex-icon-2048x2048-kdgfrhh9.png" alt="Plex Logo" style="vertical-align: middle; width: 50px;"></h1>
+        /* Title section */
+        .header {
+            text-align: center;
+            color: orange;
+            margin-bottom: 50px;
+            background-color: rgba(26, 26, 26, 0.9); /* Nearly opaque for contrast */
+            padding: 20px 0;
+        }
+
+        .header img {
+            vertical-align: middle;
+            width: 50px; /* Slightly smaller Plex logo */
+        }
+
+        /* Section headers */
+        h3 {
+            color: #0d5fd9; /* Blue */
+            font-size: 1.7em;
+            margin-top: 40px;
+            text-shadow: 1px 1px 2px #000, -1px -1px 2px #000; /* Grey/white outline */
+        }
+
+        /* Quality section header */
+        .quality-header {
+            color: red; /* Make the quality header red to stand out */
+            font-size: 2em; /* Larger for title-like prominence */
+            margin-top: 40px;
+        }
+
+        /* Link styling */
+        a {
+            color: #E5A00D;
+            text-decoration: underline;
+        }
+
+        /* Image styling */
+        img {
+            width: 100%;
+            max-width: 800px; /* Large enough to view details */
+            display: block;
+            margin: 20px auto; /* Center images */
+            border-radius: 8px; /* Soft rounded corners for a modern look */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+        }
+
+        /* Smaller step 14 image */
+        .small-image {
+            max-width: 400px; /* Half the size of other images */
+        }
+
+        /* New section indicator */
+        .new-section {
+            background-color: #333; /* Darker background for new section */
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        /* Watermark */
+        .watermark {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 100px;
+        }
+
+        /* Content blocks */
+        .content-block {
+            border-bottom: 2px solid #333; /* Subtle dividers for content blocks */
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* Back to Top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #E5A00D;
+            color: #000;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 14px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+        }
+
+        .back-to-top:hover {
+            background-color: #cc840c;
+        }
+
+        /* Responsive design */
+        @media (max-width: 1200px) {
+            body {
+                padding: 15px;
+            }
+
+            h3 {
+                font-size: 1.6em;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .header {
+                padding: 15px 0;
+            }
+
+            .header img {
+                width: 40px;
+            }
+
+            h3 {
+                font-size: 1.5em;
+            }
+
+            .back-to-top {
+                bottom: 15px;
+                right: 15px;
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            h3 {
+                font-size: 1.4em;
+            }
+
+            img {
+                max-width: 100%;
+            }
+
+            .back-to-top {
+                bottom: 10px;
+                right: 10px;
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header {
+                padding: 10px 0;
+            }
+
+            .header img {
+                width: 30px;
+            }
+
+            h3 {
+                font-size: 1.3em;
+            }
+
+            .back-to-top {
+                padding: 6px 10px;
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Welcome to Plex! <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/plex-icon-2048x2048-kdgfrhh9.png" alt="Plex Logo"></h1>
     </div>
 
-    <div class="content-block" style="border-bottom: 2px solid #333; padding-bottom: 20px; margin-bottom: 30px;">
-        <h3 style="color: #0d5fd9; font-size: 1.7em; margin-top: 40px; text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;">What is Plex?</h3>
+    <div class="content-block">
+        <h3>What is Plex?</h3>
         <p>Plex is like a streaming service but hosted by your friend. It lets you watch movies, TV shows, and more from your friend's personal media library on any device. It's a great way to enjoy content without the hassle of managing your own collection!</p>
 
-        <h3 style="color: #0d5fd9; font-size: 1.7em; margin-top: 40px; text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;">Where is Plex Available?</h3>
+        <h3>Where is Plex Available?</h3>
         <p>Plex is available globally and works on most devices, including smartphones, tablets, smart TVs, computers, and streaming devices like Roku, Fire TV, Apple TV, and Xbox. There's an app for each of these platforms, so you can access it virtually anywhere with an internet connection!</p>
-        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/platforms.png" alt="Where is Plex Available?" style="width: 100%; max-width: 800px; display: block; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/platforms.png" alt="Where is Plex Available?">
     </div>
 
-    <div class="content-block" style="border-bottom: 2px solid #333; padding-bottom: 20px; margin-bottom: 30px;">
-        <h3 style="color: #0d5fd9; font-size: 1.7em; margin-top: 40px; text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;">1. Getting Started! Go to Plex.tv</h3>
+    <div class="content-block">
+        <h3>1. Getting Started! Go to Plex.tv</h3>
 
-        <h3 style="color: #0d5fd9; font-size: 1.7em; margin-top: 40px; text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;">2. Click on Sign Up</h3>
-        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/1.png" alt="Sign Up" style="width: 100%; max-width: 800px; display: block; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+        <h3>2. Click on Sign Up</h3>
+        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/1.png" alt="Sign Up">
 
-        <h3 style="color: #0d5fd9; font-size: 1.7em; margin-top: 40px; text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;">3. Sign up using one of the methods provided</h3>
-        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/6.png" alt="Sign up Methods" style="width: 100%; max-width: 800px; display: block; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+        <h3>3. Sign up using one of the methods provided</h3>
+        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/6.png" alt="Sign up Methods">
 
-        <h3 style="color: #0d5fd9; font-size: 1.7em; margin-top: 40px; text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;">4. Once your account is created, Go to app.plex.tv</h3>
+        <h3>4. Once your account is created, Go to app.plex.tv</h3>
 
-        <h3 style="color: #0d5fd9; font-size: 1.7em; margin-top: 40px; text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;">5. Click on the settings icon located in the top right</h3>
-        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/8.png" alt="Settings Icon" style="width: 100%; max-width: 800px; display: block; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+        <h3>5. Click on the settings icon located in the top right</h3>
+        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/8.png" alt="Settings Icon">
 
-        <h3 style="color: #0d5fd9; font-size: 1.7em; margin-top: 40px; text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;">6. Within settings, Click on Manage Library Access</h3>
-        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/9.png" alt="Manage Library Access" style="width: 100%; max-width: 800px; display: block; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+        <h3>6. Within settings, Click on Manage Library Access</h3>
+        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/9.png" alt="Manage Library Access">
 
-        <h3 style="color: #0d5fd9; font-size: 1.7em; margin-top: 40px; text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;">7. If you have been invited to someone's server, you can accept the invite by clicking the check mark</h3>
-        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/10.png" alt="Accept Invite" style="width: 100%; max-width: 800px; display: block; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+        <h3>7. If you have been invited to someone's server, you can accept the invite by clicking the check mark</h3>
+        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/10.png" alt="Accept Invite">
 
-        <h3 style="color: #0d5fd9; font-size: 1.7em; margin-top: 40px; text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;">8. Next, Refresh your browser page, then click the home icon in the top left</h3>
-        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/11.png" alt="Home Icon" style="width: 100%; max-width: 800px; display: block; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+        <h3>8. Next, Refresh your browser page, then click the home icon in the top left</h3>
+        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/11.png" alt="Home Icon">
 
-        <h3 style="color: #0d5fd9; font-size: 1.7em; margin-top: 40px; text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;">9. From home, select 'More'</h3>
-        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/12.png" alt="Select 'More'" style="width: 100%; max-width: 800px; display: block; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+        <h3>9. From home, select 'More'</h3>
+        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/12.png" alt="Select 'More'">
 
-        <h3 style="color: #0d5fd9; font-size: 1.7em; margin-top: 40px; text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;">10. Under 'Pinned,' select 'Pin' on the following libraries: Movies, TV Shows</h3>
-        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/13.png" alt="Pin Libraries" style="width: 100%; max-width: 800px; display: block; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+        <h3>10. Under 'Pinned,' select 'Pin' on the following libraries: Movies, TV Shows</h3>
+        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/13.png" alt="Pin Libraries">
 
-        <h3 style="color: #0d5fd9; font-size: 1.7em; margin-top: 40px; text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;">11. Pin "Movies" and "TV Shows"</h3>
-        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/14.png" alt="Pin Movies and TV Shows" style="width: 100%; max-width: 800px; display: block; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+        <h3>11. Pin "Movies" and "TV Shows"</h3>
+        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/14.png" alt="Pin Movies and TV Shows">
 
-        <h3 style="color: #0d5fd9; font-size: 1.7em; margin-top: 40px; text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;">12. For the rest of the categories, Unpin the following: Discover, Live TV, Movies & Shows, Music, Watchlist</h3>
-        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/15.png" alt="Unpin Other Categories" style="width: 100%; max-width: 800px; display: block; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+        <h3>12. For the rest of the categories, Unpin the following: Discover, Live TV, Movies & Shows, Music, Watchlist</h3>
+        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/15.png" alt="Unpin Other Categories">
 
-        <h3 style="color: #0d5fd9; font-size: 1.7em; margin-top: 40px; text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;">13. Click on Home, Your menu should now look like the image below</h3>
-        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/16.png" alt="Menu Overview" style="width: 100%; max-width: 800px; display: block; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+        <h3>13. Click on Home, Your menu should now look like the image below</h3>
+        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/16.png" alt="Menu Overview">
 
-        <h3 style="color: #E5A00D; font-size: 2em; margin-top: 40px; text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;">Quality Settings:</h3>
+        <h3 class="quality-header">Quality Settings:</h3>
 
-        <h3 style="color: #0d5fd9; font-size: 1.7em; margin-top: 40px; text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;">14. Next, Click on your profile icon, then go to Quality</h3>
-        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/18.png" alt="Go to Quality" class="small-image" style="max-width: 400px; width: 100%; display: block; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+        <h3>14. Next, Click on your profile icon, then go to Quality</h3>
+        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/18.png" alt="Go to Quality" class="small-image">
 
-        <h3 style="color: #0d5fd9; font-size: 1.7em; margin-top: 40px; text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;">15. Under Video Quality, Click on Internet Streaming</h3>
-        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/20.png" alt="Internet Streaming" style="width: 100%; max-width: 800px; display: block; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+        <h3>15. Under Video Quality, Click on Internet Streaming</h3>
+        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/20.png" alt="Internet Streaming">
 
-        <h3 style="color: #0d5fd9; font-size: 1.7em; margin-top: 40px; text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;">16. Set both Home Streaming and Internet Streaming to Maximum</h3>
-        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/21.png" alt="Maximum Quality" style="width: 100%; max-width: 800px; display: block; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+        <h3>16. Set both Home Streaming and Internet Streaming to Maximum</h3>
+        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/21.png" alt="Maximum Quality">
     </div>
 
-    <div class="content-block" style="border-bottom: 2px solid #333; padding-bottom: 20px; margin-bottom: 30px;">
-        <h3 style="color: #0d5fd9; font-size: 1.7em; margin-top: 40px; text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;">FAQ:</h3>
+    <div class="content-block">
+        <h3>FAQ:</h3>
         <ul>
             <li><b>Mobile Playback Fee:</b> There's a one-time fee of $5 for unlocking mobile playback.</li>
             <li><b>Account Sharing:</b> Please don't share your account. If you have friends interested in joining, let me know, and I'll send them an invitation.</li>
-            <li><b>Requests:</b> Requests can be made <a href="https://request.bigbearplex.me" style="color: #E5A00D; text-decoration: underline;">Here</a>. Just sign in via Plex when prompted.</li>
+            <li><b>Requests:</b> Requests can be made <a href="https://request.bigbearplex.me">Here</a>. Just sign in via Plex when prompted.</li>
             <li><b>Reporting Issues:</b> If you encounter any issues with video files, audio, language issues, etc., please report them in Plex or Overseer so they can be addressed promptly.</li>
             <li><b>Best Experience with Plex:</b> For the best experience with Plex, follow the instructions provided for each platform or device. I personally recommend Chromecast or Nvidia Shield as the best devices.</li>
             <li><b>Platform Improvements & Downtime:</b> Sometimes I make updates and have to shut down the server. Usually, I try to do it when no one is watching, but if the server is down temporarily, go touch grass. I'll try to communicate major outages to users in advance.</li>
-            <li><b>Library Quality:</b> I try to get all movies in 1080p and all TV in at least 720p if not 1080p. If something is really low quality while at maximum streaming quality, please report an issue, and I'll replace the file.</li>
+            <li><b>Library Quality:</b> I try to get all movies in 1080p and all TV in at least 720p if not 1080p. If something is really poor quality while at maximum streaming quality, please report an issue, and I'll replace the file.</li>
         </ul>
     </div>
+
+    <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Back to Top</div>
 
 </body>
 </html>
