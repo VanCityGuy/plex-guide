@@ -59,6 +59,7 @@
             margin: 20px auto; /* Center images */
             border-radius: 8px; /* Soft rounded corners for a modern look */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+            cursor: pointer; /* Pointer cursor for clickable images */
         }
 
         /* Smaller step 14 image */
@@ -70,7 +71,7 @@
         .smaller-image {
             max-width: 300px; /* smaller than small */
         }
-        
+
         /* New section indicator */
         .new-section {
             background-color: #333; /* Darker background for new section */
@@ -119,6 +120,16 @@
         }
 
         ul li {
+            margin-bottom: 10px; /* Add space between list items */
+        }
+
+        /* Quality Styles */
+        qul {
+            padding-left: 20px; /* Add padding to the left of the list */
+            font-size: 1.4em
+        }
+
+        qul li {
             margin-bottom: 10px; /* Add space between list items */
         }
 
@@ -192,6 +203,47 @@
                 padding: 6px 10px;
                 font-size: 10px;
             }
+        }
+
+        /* Popup styles */
+        .popup {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8); /* Black background with opacity */
+        }
+
+        .popup-content {
+            position: relative;
+            margin: 15% auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .popup img {
+            width: 100%;
+            border-radius: 8px; /* Soft rounded corners for consistency */
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: #fff;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #E5A00D;
         }
     </style>
 </head>
@@ -267,12 +319,12 @@
         <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step16.png" alt="Maximum Quality">
 
         <h3>17. For every new Plex client you setup you'll need change these settings once when first signing in. You'll also need to pin and unpin as describe above. Here some guides to changing the quality settings for the most popular clients:</h3>
-        <ul>iOS and Android app:</ul>
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/ios_android.jpg" alt="iOS and Android">
-        <ul>Smart TV/Straming Stick/Gaming Console:</ul>
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/smart_stick_console.jpg" alt="Smart Stick Console">
-        <ul>Apple TV tvOS:</ul>
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/tvOS.jpg" alt="tvOS">
+        <qul>iOS and Android app:</qul>
+        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/ios_android.jpg" alt="iOS and Android" class="small-image">
+        <qul>Smart TV/Streaming Stick/Gaming Console:</qul>
+        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/smart_stick_console.jpg" alt="Smart Stick Console" class="small-image">
+        <qul>Apple TV tvOS:</qul>
+        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/tvOS.jpg" alt="tvOS" class="small-image">
     </div>
 
     <div class="content-block">
@@ -289,6 +341,41 @@
     </div>
 
     <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Back to Top</div>
+
+    <!-- Popup for images -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <img id="popup-img" src="" alt="Popup Image">
+        </div>
+    </div>
+
+    <script>
+        // Function to open the popup
+        function openPopup(src) {
+            document.getElementById('popup-img').src = src;
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        // Function to close the popup
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        // Add click event listeners to images
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('click', function() {
+                openPopup(this.src);
+            });
+        });
+
+        // Close the popup when clicking outside of the popup content
+        document.getElementById('popup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+    </script>
 
 </body>
 </html>
