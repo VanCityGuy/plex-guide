@@ -1,391 +1,491 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>New Plex User Guide</title>
-    <style>
-        /* General styles */
-        body {
-            background-color: #222730; /* Solid dark background */
-            color: #fff; /* White text */
-            font-family: 'Roboto', sans-serif; /* Updated font */
-            margin: 0;
-            padding: 20px;
-            background-size: cover;
-            background-attachment: fixed;
-            background-blend-mode: multiply; /* Enhanced blend mode for better readability */
-            background-position: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>New Plex User Guide</title>
 
-        /* Title section */
-        .header {
-            text-align: center;
-            color: orange;
-            margin-bottom: 50px;
-            background-color: #2e3440; /* Nearly opaque for contrast */
-            padding: 20px 0;
-        }
+  <!-- Font (optional, but helps the modern feel) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        .header img {
-            vertical-align: middle;
-            width: 50px; /* Slightly smaller Plex logo */
-        }
+  <style>
+    :root{
+      --bg0:#0b0f17;
+      --bg1:#0f1624;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.08);
+      --border: rgba(255,255,255,.10);
+      --text:#e7ecf3;
+      --muted:#a9b4c3;
+      --accent:#e5a00d;         /* Plex-y gold */
+      --accent2:#2f87ff;        /* cool blue for links */
+      --danger:#ff4d4d;         /* quality header */
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --shadow2: 0 10px 30px rgba(0,0,0,.40);
+      --radius: 18px;
+      --radius2: 14px;
+      --max: 1100px;
+    }
 
-        /* Section headers */
-        h3 {
-            color: #69829c; /* Blue */
-            font-size: 1.7em;
-            margin-top: 40px;
-            text-shadow: 1px 1px 2px #000, -1px -1px 2px #000; /* Grey/white outline */
-        }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
 
-        /* Quality section header */
-        .quality-header {
-            color: red; /* Make the quality header red to stand out */
-            font-size: 2em; /* Larger for title-like prominence */
-            margin-top: 40px;
-        }
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.55;
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(229,160,13,.22), transparent 60%),
+        radial-gradient(900px 500px at 95% 10%, rgba(47,135,255,.18), transparent 55%),
+        radial-gradient(900px 500px at 70% 110%, rgba(160,90,255,.14), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      padding: 28px 16px 90px;
+    }
 
-        /* Link styling */
-        a {
-            color: #69829c;
-            text-decoration: underline;
-        }
+    a{
+      color: var(--accent2);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover{ text-decoration: underline; }
 
-        /* Image styling */
-        img {
-            width: 100%;
-            max-width: max-content; /* Large enough to view details */
-            display: block;
-            margin: 20px auto; /* Center images */
-            border-radius: 8px; /* Soft rounded corners for a modern look */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
-            cursor: pointer; /* Pointer cursor for clickable images */
-        }
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+    }
 
-        /* Medium image */
-        .med-image {
-            max-width: 1200px; /* Medium */
-        }
+    /* Header */
+    .header{
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      border-radius: var(--radius);
+      padding: 22px 18px;
+      box-shadow: var(--shadow2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      margin-bottom: 22px;
+    }
 
-        /* Medium-Small image */
-        .med-small-image {
-            max-width: 600px; /* Medium Small */
-        }
+    .header-inner{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap: 14px;
+      text-align:center;
+      flex-wrap: wrap;
+    }
 
-        /* Small image */
-        .small-image {
-            max-width: 400px; /* Small */
-        }
+    .plex-mark{
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: rgba(229,160,13,.12);
+      border: 1px solid rgba(229,160,13,.25);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,.35);
+    }
+    .plex-mark img{
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+      margin:0;
+      border-radius: 0;
+      box-shadow:none;
+      cursor: default;
+    }
 
-        /* Smaller image */
-        .smaller-image {
-            max-width: 300px; /* Smaller than small */
-        }
+    h1{
+      margin:0;
+      font-size: clamp(22px, 3vw, 34px);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
 
-        /* New section indicator */
-        .new-section {
-            background-color: #333; /* Darker background for new section */
-            padding: 10px;
-            margin-top: 20px;
-        }
+    .subtitle{
+      margin: 10px auto 0;
+      max-width: 70ch;
+      color: var(--muted);
+      font-size: 0.98rem;
+      text-align:center;
+    }
 
-        /* Watermark */
-        .watermark {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            width: 100px;
-        }
+    /* Content blocks */
+    .content-block{
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04));
+      border-radius: var(--radius);
+      padding: 22px 18px;
+      box-shadow: var(--shadow2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      margin: 18px 0;
+    }
 
-        /* Content blocks */
-        .content-block {
-            border-bottom: 2px solid #333; /* Subtle dividers for content blocks */
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
+    .content-block + .content-block{
+      margin-top: 18px;
+    }
 
-        /* Back to Top button */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #E5A00D;
-            color: #000;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
-            font-size: 14px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: background-color 0.3s;
-        }
+    h3{
+      margin: 22px 0 10px;
+      font-size: clamp(18px, 2vw, 22px);
+      letter-spacing: -0.01em;
+      color: #cfe2ff;
+    }
+    .content-block h3:first-child{
+      margin-top: 0;
+    }
 
-        .back-to-top:hover {
-            background-color: #cc840c;
-        }
+    p{
+      margin: 0 0 14px;
+      color: var(--text);
+    }
 
-        /* FAQ Section Styles */
-        ul {
-            padding-left: 20px; /* Add padding to the left of the list */
-        }
+    .quality-header{
+      color: var(--danger);
+      font-size: clamp(20px, 2.2vw, 26px);
+      margin-top: 26px;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+    }
+    .quality-header::before{
+      content:"";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--danger);
+      box-shadow: 0 0 0 6px rgba(255,77,77,.12);
+      flex: 0 0 auto;
+    }
 
-        ul li {
-            margin-bottom: 10px; /* Add space between list items */
-        }
+    /* “qul” replacement: callout/hint pills */
+    .hint{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(229,160,13,.28);
+      background: rgba(229,160,13,.10);
+      color: #ffe5b0;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .hint::before{
+      content:"⚡";
+      opacity:.9;
+    }
 
-        /* Quality Styles */
-        qul {
-            padding-left: 20px; /* Add padding to the left of the list */
-            font-size: 1.4em
-        }
+    /* Lists */
+    ul{
+      padding-left: 18px;
+      margin: 10px 0 0;
+      color: var(--text);
+    }
+    li{
+      margin: 10px 0;
+      color: var(--text);
+    }
+    li b{
+      color: #ffffff;
+    }
 
-        qul li {
-            margin-bottom: 10px; /* Add space between list items */
-        }
+    /* Images */
+    img{
+      width: 100%;
+      height: auto;
+      display:block;
+      margin: 14px auto 6px;
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: var(--shadow2);
+      cursor: zoom-in;
+      transition: transform .18s ease, border-color .18s ease, filter .18s ease;
+      filter: saturate(1.02) contrast(1.02);
+    }
+    img:hover{
+      transform: translateY(-2px);
+      border-color: rgba(229,160,13,.35);
+    }
 
-        /* Responsive design */
-        @media (max-width: 1200px) {
-            body {
-                padding: 15px;
-            }
+    .med-image{ max-width: 1100px; }
+    .med-small-image{ max-width: 720px; }
+    .small-image{ max-width: 520px; }
+    .smaller-image{ max-width: 360px; }
 
-            h3 {
-                font-size: 1.6em;
-            }
-        }
+    /* Back to top */
+    .back-to-top{
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      background: rgba(229,160,13,.92);
+      color: #0b0f17;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 18px 50px rgba(0,0,0,.45);
+      border: 1px solid rgba(0,0,0,.25);
+      transition: transform .15s ease, filter .15s ease, opacity .15s ease;
+      user-select:none;
+    }
+    .back-to-top:hover{
+      transform: translateY(-2px);
+      filter: brightness(1.03);
+    }
+    .back-to-top[hidden]{ opacity: 0; pointer-events:none; }
 
-        @media (max-width: 992px) {
-            .header {
-                padding: 15px 0;
-            }
+    /* Popup */
+    .popup{
+      display:none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,.75);
+      padding: 22px;
+      animation: fadeIn .12s ease-out;
+    }
+    @keyframes fadeIn{ from{ opacity:0 } to{ opacity:1 } }
 
-            .header img {
-                width: 40px;
-            }
+    .popup-content{
+      position: relative;
+      max-width: min(1200px, 96vw);
+      margin: 0 auto;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow);
+      background: rgba(10,14,22,.75);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
 
-            h3 {
-                font-size: 1.5em;
-            }
+    .popup-img{
+      width: 100%;
+      display:block;
+      border-radius: 0;
+      margin:0;
+      border:none;
+      box-shadow:none;
+      cursor: default;
+      transform: none !important;
+    }
 
-            .back-to-top {
-                bottom: 15px;
-                right: 15px;
-                padding: 8px 12px;
-                font-size: 12px;
-            }
-        }
+    .popup-topbar{
+      position:absolute;
+      inset: 0 0 auto 0;
+      display:flex;
+      justify-content:flex-end;
+      padding: 10px;
+      pointer-events:none;
+    }
 
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
+    .close{
+      pointer-events:auto;
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.35);
+      color: #fff;
+      font-size: 20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      transition: background .15s ease, border-color .15s ease;
+    }
+    .close:hover{
+      background: rgba(47,135,255,.25);
+      border-color: rgba(47,135,255,.45);
+    }
 
-            h3 {
-                font-size: 1.4em;
-            }
-
-            img {
-                max-width: 100%;
-            }
-
-            .back-to-top {
-                bottom: 10px;
-                right: 10px;
-                padding: 8px 12px;
-                font-size: 12px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .header {
-                padding: 10px 0;
-            }
-
-            .header img {
-                width: 30px;
-            }
-
-            h3 {
-                font-size: 1.3em;
-            }
-
-            .back-to-top {
-                padding: 6px 10px;
-                font-size: 10px;
-            }
-        }
-
-        /* Popup styles */
-        .popup {
-            display: none; /* Hidden by default */
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.8); /* Black background with opacity */
-        }
-
-        .popup-content {
-            position: relative;
-            margin: 15% auto;
-            padding: 20px;
-            width: 80%;
-            max-width: 100%;
-        }
-
-        .popup img {
-            width: 100%;
-            border-radius: 8px; /* Soft rounded corners for consistency */
-        }
-
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 25px;
-            color: #fff;
-            font-size: 35px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #0d84e5;
-        }
-    </style>
+    /* Small screens tweaks */
+    @media (max-width: 640px){
+      body{ padding: 18px 12px 90px; }
+      .content-block, .header{ padding: 18px 14px; border-radius: 16px; }
+      .hint{ border-radius: 14px; display:flex; }
+      .back-to-top{ width: 42px; height: 42px; }
+    }
+  </style>
 </head>
+
 <body>
-
+  <div class="wrap">
     <div class="header">
-        <h1>Welcome to Plex! <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/plex-icon-2048x2048-kdgfrhh9.png" alt="Plex Logo"></h1>
-    </div>
-
-    <div class="content-block">
-        <h3>What is Plex?</h3>
-        <p>Plex is like a streaming service but hosted by your friend. It lets you watch movies, TV shows, and more from your friend's personal media library on any device. It's a great way to enjoy content without the hassle of managing your own collection!</p>
-
-        <h3>Where is Plex Available?</h3>
-        <p>Plex is available globally and works on most devices, including smartphones, tablets, smart TVs, computers, and streaming devices like Roku, Fire TV, Apple TV, and Xbox. There's an app for each of these platforms, so you can access it virtually anywhere with an internet connection!</p>
-        <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/platforms.png" alt="Where is Plex Available?" class="med-image">
-    </div>
-
-    <div class="content-block">
-        <h3>1. Getting Started! Go to Plex.tv</h3>
-
-        <h3>2. Click on Sign Up</h3>
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step02.png" alt="Sign Up" class="med-image">
-
-        <h3>3. Sign up using one of the methods provided</h3>
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step03.png" alt="Sign up Methods" class="med-image">
-
-        <h3>4. Once your account is created, Go to app.plex.tv and when prompted change privacy settings</h3>
-        <qul>Go to both of the indicated sections</qul>
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step04.png" alt="Privacy" class="med-image">
-        <qul>Change everything to Private</qul>
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step04a.png" alt="Friend Access" class="med-small-image">
-        <qul>Change to Off</qul>
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step04b.png" alt="Newsletter" class="med-small-image">
-
-        <h3>5. Click on the settings icon located in the top right</h3>
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step05.png" alt="Settings Icon" class="med-image">
-
-        <h3>6. Within settings, click on Manage Library Access</h3>
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step06.png" alt="Manage Library Access" class="med-image">
-
-        <h3>7. You should see the server you have been invited to here. If necessary click the check mark to accept access</h3>
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step07.png" alt="Accept Invite" class="med-image">
-
-        <h3>8. Next, click the home icon to return to the main page</h3>
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step08.png" alt="Home Icon" class="med-image">
-
-        <h3>9. From home, select 'More'</h3>
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step09.png" alt="Select 'More'" class="med-image">
-
-        <h3>10. You will see the server with the following libraries: 4K Local, Audiobooks, Movies, TV Shows</h3>
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step10.png" alt="Pin Libraries" class="med-image">
-
-        <h3>11. Hover over each and click the three dots to Pin all four libraries (and playlists if you intend to use them)</h3>
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step11.png" alt="Pin Movies and TV Shows" class="small-image">
-
-        <h3>12. For the Plex categories, Unpin the following: Discover, Live TV, Movies & Shows, Music, Watchlist</h3>
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step12.png" alt="Unpin Other Categories" class="small-image">
-
-        <h3>13. Click on Pinned, your menu should now look like the image below</h3>
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step13.png" alt="Pinned" class="smaller-image">
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step13a.png" alt="Menu Overview" class="med-image">
-
-        <h3 class="quality-header">Quality Settings:</h3>
-
-        <h3>14. Next, click on the Settings icon, then go to Quality in the sidebar under Plex Web</h3>
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step14.png" alt="Go to Quality" class="med-image">
-
-        <h3>15. Under Internet Streaming, beside Video Quality choose Maximum</h3>
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step15.png" alt="Internet Streaming" class="med-image">
-
-        <h3>16. Uncheck "Use recommended settings" and set both Home Streaming and Internet Streaming to Maximum. Click Save Changes, then click the home icon in the top left corner to return to the main page</h3>
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step16.png" alt="Maximum Quality" class="med-image">
-
-        <h3>17. For every new Plex client you setup you'll need change these settings once when first signing in. You'll also need to pin and unpin as describe above. Here some guides to changing the quality settings for the most popular clients:</h3>
-        <qul>iOS and Android app:</qul>
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/ios_android.jpg" alt="iOS and Android" class="small-image">
-        <qul>Smart TV/Streaming Stick/Gaming Console:</qul>
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/smart_stick_console.jpg" alt="Smart Stick Console" class="small-image">
-        <qul>Apple TV tvOS:</qul>
-        <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/tvOS.jpg" alt="tvOS" class="small-image">
-    </div>
-
-    <div class="content-block">
-        <h3>FAQ:</h3>
-        <ul>
-            <li><b>Account Sharing:</b> Please don't share your account. If you have friends interested in joining, let me know, and I'll send them an invitation.</li>
-            <li><b>Requests:</b> Requests can be made here: <a href="https://request.bigbearplex.me" target="_blank">https://request.bigbearplex.me</a>. Just sign in via Plex when prompted.</li>
-            <li><b>Reporting Issues:</b> If you encounter any issues with video files, audio, language issues, etc., please report them in Plex or the request site above so they can be addressed promptly.</li>
-            <li><b>Best Experience with Plex:</b> For the best experience with Plex, follow the instructions provided for each platform or device. I personally recommend Chromecast or Nvidia Shield as the best devices.</li>
-            <li><b>Platform Improvements & Downtime:</b> Sometimes I make updates and have to shut down the server. Usually, I try to do it when no one is watching, but if the server is down temporarily, go touch grass. I'll try to communicate major outages to users in advance.</li>
-            <li><b>Library Quality:</b> I try to get all movies in 1080p and all TV in at least 720p if not 1080p. If something is really poor quality while at maximum streaming quality, please report an issue, and I'll replace the file.</li>
-        </ul>
-    </div>
-
-    <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Back to Top</div>
-
-    <!-- Popup for images -->
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <span class="close" onclick="closePopup()">&times;</span>
-            <img id="popup-img" src="" alt="Popup Image">
+      <div class="header-inner">
+        <div class="plex-mark" aria-hidden="true">
+          <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/plex-icon-2048x2048-kdgfrhh9.png" alt="">
         </div>
+        <h1>Welcome to Plex!</h1>
+      </div>
+      <div class="subtitle">
+        A quick, friendly setup guide so you get the best quality + cleanest experience right away.
+      </div>
     </div>
 
-    <script>
-        // Function to open the popup
-        function openPopup(src) {
-            document.getElementById('popup-img').src = src;
-            document.getElementById('popup').style.display = 'block';
-        }
+    <div class="content-block">
+      <h3>What is Plex?</h3>
+      <p>
+        Plex is like a streaming service but hosted by your friend. It lets you watch movies, TV shows, and more from your friend's personal media library on any device.
+      </p>
 
-        // Function to close the popup
-        function closePopup() {
-            document.getElementById('popup').style.display = 'none';
-        }
+      <h3>Where is Plex Available?</h3>
+      <p>
+        Plex is available globally and works on most devices, including smartphones, tablets, smart TVs, computers, and streaming devices like Roku, Fire TV, Apple TV, and Xbox.
+      </p>
+      <img src="https://filedn.com/lQMTYhsrYNNb29MjPGGysO7/public/server/PlexGuides/platforms.png" alt="Where is Plex Available?" class="med-image">
+    </div>
 
-        // Add click event listeners to images
-        document.querySelectorAll('img').forEach(img => {
-            img.addEventListener('click', function() {
-                openPopup(this.src);
-            });
-        });
+    <div class="content-block">
+      <h3>1. Getting Started! Go to Plex.tv</h3>
 
-        // Close the popup when clicking outside of the popup content
-        document.getElementById('popup').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closePopup();
-            }
-        });
-    </script>
+      <h3>2. Click on Sign Up</h3>
+      <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step02.png" alt="Sign Up" class="med-image">
 
+      <h3>3. Sign up using one of the methods provided</h3>
+      <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step03.png" alt="Sign up Methods" class="med-image">
+
+      <h3>4. Once your account is created, go to app.plex.tv and change privacy settings</h3>
+      <div class="hint">Go to both of the indicated sections</div>
+      <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step04.png" alt="Privacy" class="med-image">
+
+      <div class="hint">Change everything to Private</div>
+      <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step04a.png" alt="Friend Access" class="med-small-image">
+
+      <div class="hint">Change to Off</div>
+      <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step04b.png" alt="Newsletter" class="med-small-image">
+
+      <h3>5. Click on the settings icon located in the top right</h3>
+      <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step05.png" alt="Settings Icon" class="med-image">
+
+      <h3>6. Within settings, click on Manage Library Access</h3>
+      <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step06.png" alt="Manage Library Access" class="med-image">
+
+      <h3>7. You should see the server you have been invited to here. If necessary, click the check mark to accept access</h3>
+      <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step07.png" alt="Accept Invite" class="med-image">
+
+      <h3>8. Next, click the home icon to return to the main page</h3>
+      <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step08.png" alt="Home Icon" class="med-image">
+
+      <h3>9. From home, select “More”</h3>
+      <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step09.png" alt="Select 'More'" class="med-image">
+
+      <h3>10. You will see the server with the following libraries: 4K Local, Audiobooks, Movies, TV Shows</h3>
+      <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step10.png" alt="Pin Libraries" class="med-image">
+
+      <h3>11. Hover over each and click the three dots to pin all four libraries (and playlists if you intend to use them)</h3>
+      <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step11.png" alt="Pin Movies and TV Shows" class="small-image">
+
+      <h3>12. For the Plex categories, unpin the following: Discover, Live TV, Movies &amp; Shows, Music, Watchlist</h3>
+      <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step12.png" alt="Unpin Other Categories" class="small-image">
+
+      <h3>13. Click on Pinned — your menu should now look like the image below</h3>
+      <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step13.png" alt="Pinned" class="smaller-image">
+      <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step13a.png" alt="Menu Overview" class="med-image">
+
+      <h3 class="quality-header">Quality Settings</h3>
+
+      <h3>14. Click the Settings icon, then go to Quality in the sidebar under Plex Web</h3>
+      <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step14.png" alt="Go to Quality" class="med-image">
+
+      <h3>15. Under Internet Streaming, beside Video Quality choose Maximum</h3>
+      <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step15.png" alt="Internet Streaming" class="med-image">
+
+      <h3>16. Uncheck “Use recommended settings” and set both Home Streaming and Internet Streaming to Maximum. Click Save Changes, then click the home icon to return to the main page</h3>
+      <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/step16.png" alt="Maximum Quality" class="med-image">
+
+      <h3>17. For every new Plex client you set up, you’ll need to change these settings once when first signing in</h3>
+
+      <div class="hint">iOS and Android app</div>
+      <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/ios_android.jpg" alt="iOS and Android" class="small-image">
+
+      <div class="hint">Smart TV / Streaming Stick / Gaming Console</div>
+      <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/smart_stick_console.jpg" alt="Smart Stick Console" class="small-image">
+
+      <div class="hint">Apple TV (tvOS)</div>
+      <img src="https://raw.githubusercontent.com/VanCityGuy/plex-guide/main/images/tvOS.jpg" alt="tvOS" class="small-image">
+    </div>
+
+    <div class="content-block">
+      <h3>FAQ</h3>
+      <ul>
+        <li><b>Account Sharing:</b> Please don't share your account. If you have friends interested in joining, let me know, and I'll send them an invitation.</li>
+        <li><b>Requests:</b> Requests can be made here: <a href="https://request.bigbearplex.me" target="_blank" rel="noopener">https://request.bigbearplex.me</a>. Just sign in via Plex when prompted.</li>
+        <li><b>Reporting Issues:</b> If you encounter any issues with video files, audio, language issues, etc., please report them in Plex or the request site above so they can be addressed promptly.</li>
+        <li><b>Best Experience with Plex:</b> For the best experience with Plex, follow the instructions provided for each platform or device. I personally recommend Chromecast or Nvidia Shield as the best devices.</li>
+        <li><b>Platform Improvements &amp; Downtime:</b> Sometimes I make updates and have to shut down the server. Usually I try to do it when no one is watching — but if the server is down temporarily, go touch grass. I’ll try to communicate major outages in advance.</li>
+        <li><b>Library Quality:</b> I try to get all movies in 1080p and all TV in at least 720p if not 1080p. If something is really poor quality while at maximum streaming quality, please report an issue and I’ll replace the file.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Back to Top -->
+  <div id="backToTop" class="back-to-top" title="Back to top" aria-label="Back to top">↑</div>
+
+  <!-- Popup for images -->
+  <div id="popup" class="popup" role="dialog" aria-modal="true" aria-label="Image preview">
+    <div class="popup-content">
+      <div class="popup-topbar">
+        <button class="close" id="closeBtn" aria-label="Close image preview">✕</button>
+      </div>
+      <img id="popup-img" class="popup-img" src="" alt="Popup Image">
+    </div>
+  </div>
+
+  <script>
+    const popup = document.getElementById('popup');
+    const popupImg = document.getElementById('popup-img');
+    const closeBtn = document.getElementById('closeBtn');
+    const backToTop = document.getElementById('backToTop');
+
+    function openPopup(src, alt) {
+      popupImg.src = src;
+      popupImg.alt = alt || "Image preview";
+      popup.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePopup() {
+      popup.style.display = 'none';
+      popupImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    // Click to open images (skip header icon)
+    document.querySelectorAll('.content-block img').forEach(img => {
+      img.addEventListener('click', () => openPopup(img.src, img.alt));
+    });
+
+    // Close popup (button / outside click / ESC)
+    closeBtn.addEventListener('click', closePopup);
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) closePopup();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && popup.style.display === 'block') closePopup();
+    });
+
+    // Back to top visibility + action
+    function updateBackToTop() {
+      backToTop.hidden = window.scrollY < 500;
+    }
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    window.addEventListener('scroll', updateBackToTop);
+    updateBackToTop();
+  </script>
 </body>
 </html>
-
