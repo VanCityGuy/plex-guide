@@ -31,16 +31,21 @@
     * { box-sizing: border-box; }
     html, body { height: 100%; }
 
+    /* ✅ Clean, non-tiling background (no repeating patterns) */
     body{
       margin:0;
       font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color: var(--text);
       line-height: 1.55;
+
       background:
-        radial-gradient(1200px 600px at 20% -10%, rgba(229,160,13,.22), transparent 60%),
-        radial-gradient(900px 500px at 95% 10%, rgba(47,135,255,.18), transparent 55%),
-        radial-gradient(900px 500px at 70% 110%, rgba(160,90,255,.14), transparent 55%),
+        radial-gradient(1200px 700px at 18% -10%, rgba(229,160,13,.16), transparent 60%),
+        radial-gradient(1000px 600px at 95% 0%, rgba(47,135,255,.14), transparent 55%),
+        radial-gradient(900px 600px at 65% 110%, rgba(160,90,255,.10), transparent 55%),
         linear-gradient(180deg, var(--bg0), var(--bg1));
+      background-repeat: no-repeat;
+      background-attachment: fixed, fixed, fixed, fixed;
+
       padding: 28px 16px 90px;
     }
 
@@ -181,7 +186,7 @@
       flex: 0 0 auto;
     }
 
-    /* Hint pill (replacement for <qul>) */
+    /* Hint pill */
     .hint{
       display:inline-flex;
       align-items:center;
@@ -364,44 +369,52 @@
       position: fixed;
       inset: 0;
       z-index: 1000;
-      background: rgba(0,0,0,.75);
-      padding: 22px;
+      background: rgba(0,0,0,.80);
+      padding: 16px;
       animation: fadeIn .12s ease-out;
     }
     @keyframes fadeIn{ from{ opacity:0 } to{ opacity:1 } }
 
+    /* ✅ Popup content now uses the viewport and never clips */
     .popup-content{
       position: relative;
-      max-width: min(1200px, 96vw);
+      width: min(1280px, calc(100vw - 32px));
+      height: calc(100vh - 32px);
       margin: 0 auto;
-      top: 50%;
-      transform: translateY(-50%);
       border-radius: 20px;
       overflow: hidden;
       border: 1px solid rgba(255,255,255,.12);
       box-shadow: var(--shadow);
-      background: rgba(10,14,22,.75);
+      background: rgba(10,14,22,.70);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 56px 14px 14px; /* room for close button */
     }
 
+    /* ✅ The image scales to fit inside popup-content */
     .popup-img{
-      width: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
       display:block;
-      border-radius: 0;
+      border-radius: 14px;
       margin:0;
-      border:none;
-      box-shadow:none;
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: var(--shadow2);
       cursor: default;
       transform: none !important;
     }
 
     .popup-topbar{
       position:absolute;
-      inset: 0 0 auto 0;
+      inset: 10px 10px auto 10px;
       display:flex;
       justify-content:flex-end;
-      padding: 10px;
       pointer-events:none;
     }
 
@@ -447,6 +460,7 @@
       .content-block, .header{ padding: 18px 14px; border-radius: 16px; }
       .hint{ border-radius: 14px; display:flex; }
       .back-to-top{ width: 42px; height: 42px; }
+      .popup-content{ padding: 56px 10px 10px; }
     }
 
     /* =========================
@@ -617,7 +631,7 @@
       border: 1px solid rgba(229,160,13,.28);
     }
 
-    /* Popup nav buttons */
+    /* Popup nav buttons (kept, now aligned to the viewport container) */
     .popup-nav {
       position: absolute;
       inset: 0;
