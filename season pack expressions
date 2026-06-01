@@ -1,0 +1,6 @@
+/* 4K Season Packs */ merge(resolution(streams, '2160p'), seasonPack(streams, 'seasonPack'))
+/* 4K Streams */ resolution(streams, '2160p')
+/* 1080p Season Packs */ merge(resolution(streams, '1080p'), seasonPack(streams, 'seasonPack'))
+/* 1080p Streams */ resolution(streams, '1080p')
+/* 720p Season Packs */ merge(resolution(streams, '720p'), seasonPack(streams, 'seasonPack'))
+/* 720p Streams */ resolution(streams, '720p')
