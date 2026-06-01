@@ -85,8 +85,21 @@
       "imageURL": "https://raw.githubusercontent.com/9mousaa/BetterFormatter/main/images/mono-bluray.png",
       "isEnabled": true,
       "name": "BluRay",
-      "pattern": "(?i)^(?=.*(?:blu[\\s._-]?ray|bdrip|brrip|bdmv))(?!.*remux)",
+      "pattern": "(?i)^(?=.*(?:blu[\\s._-]?ray|bdmv|bdmux|uhd[\\s._-]?blu[\\s._-]?ray))(?!.*remux)(?!.*\\b(?:bd[\\s._-]?rip|br[\\s._-]?rip)\\b)",
       "tagColor": "#2C3875F0",
+      "tagStyle": "filled and bordered",
+      "textColor": "#E8EDF7",
+      "type": "filter"
+    },
+    {
+      "borderColor": "#FF2563EB",
+      "groupId": "gq",
+      "id": "ax-q-bdrip",
+      "imageURL": "",
+      "isEnabled": true,
+      "name": "BDRip",
+      "pattern": "(?i)\\b(?:bd[\\s._-]?rip|br[\\s._-]?rip)\\b",
+      "tagColor": "#2C2563EB",
       "tagStyle": "filled and bordered",
       "textColor": "#E8EDF7",
       "type": "filter"
@@ -115,6 +128,45 @@
       "tagColor": "#2C5638F0",
       "tagStyle": "filled and bordered",
       "textColor": "#EBE8F7",
+      "type": "filter"
+    },
+    {
+      "borderColor": "#FF6D28D9",
+      "groupId": "gq",
+      "id": "ax-q-web",
+      "imageURL": "",
+      "isEnabled": true,
+      "name": "WEB",
+      "pattern": "(?i)^(?=.*\\bweb\\b)(?!.*\\bweb[\\s._-]?(?:dlp?|rip)\\b)",
+      "tagColor": "#2C6D28D9",
+      "tagStyle": "filled and bordered",
+      "textColor": "#EFE8F7",
+      "type": "filter"
+    },
+    {
+      "borderColor": "#FF0891B2",
+      "groupId": "gq",
+      "id": "ax-q-hdtv",
+      "imageURL": "",
+      "isEnabled": true,
+      "name": "HDTV",
+      "pattern": "(?i)\\b(?:hdtv|pdtv|dsr|dsr[\\s._-]?rip|tvrip)\\b",
+      "tagColor": "#2C0891B2",
+      "tagStyle": "filled and bordered",
+      "textColor": "#E6FAFF",
+      "type": "filter"
+    },
+    {
+      "borderColor": "#FF0F766E",
+      "groupId": "gq",
+      "id": "ax-q-dvd",
+      "imageURL": "",
+      "isEnabled": true,
+      "name": "DVD",
+      "pattern": "(?i)\\b(?:dvd|dvd[\\s._-]?rip|dvdrip|dvdscr|ntsc|pal)\\b",
+      "tagColor": "#2C0F766E",
+      "tagStyle": "filled and bordered",
+      "textColor": "#E6FFFB",
       "type": "filter"
     },
     {
