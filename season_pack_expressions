@@ -1,0 +1,26 @@
+[
+  {
+    "name": "4K Season Packs",
+    "expression": "resolution(seasonPack(streams, 'seasonPack'), '2160p')"
+  },
+  {
+    "name": "4K Streams",
+    "expression": "resolution(streams, '2160p')"
+  },
+  {
+    "name": "1080p Season Packs",
+    "expression": "resolution(seasonPack(streams, 'seasonPack'), '1080p')"
+  },
+  {
+    "name": "1080p Streams",
+    "expression": "resolution(streams, '1080p')"
+  },
+  {
+    "name": "720p Season Packs",
+    "expression": "resolution(seasonPack(streams, 'seasonPack'), '720p')"
+  },
+  {
+    "name": "720p Streams",
+    "expression": "resolution(streams, '720p')"
+  }
+]
