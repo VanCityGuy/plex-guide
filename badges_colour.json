@@ -7,11 +7,11 @@
       "isEnabled": true,
       "name": "2160p",
       "pattern": "(?i)^(?!.*\\b(?:1080p?|720p?|full[ ._-]?hd|fhd)\\b)(?=.*(?:\\b2160p?\\b|(?<![a-z0-9])4k(?![a-z0-9])|\\buhd\\b|\\bultra[ ._-]?hd\\b))",
-      "tagColor": "#D9E65A00",
+      "tagColor": "#D914532D",
       "tagStyle": "filled and bordered",
       "textColor": "#FFFFFFFF",
       "type": "filter",
-      "borderColor": "#FFE65A00"
+      "borderColor": "#FF14532D"
     },
     {
       "groupId": "550e8400-e29b-41d4-a716-446655440000",
@@ -20,11 +20,11 @@
       "isEnabled": true,
       "name": "1080p",
       "pattern": "(?i)(?:\\b1080p?\\b|\\bfhd\\b|\\bfull[ ._-]?hd\\b)",
-      "tagColor": "#D9FF8500",
+      "tagColor": "#D9166534",
       "tagStyle": "filled and bordered",
       "textColor": "#FFFFFFFF",
       "type": "filter",
-      "borderColor": "#FFFF8500"
+      "borderColor": "#FF166534"
     },
     {
       "groupId": "550e8400-e29b-41d4-a716-446655440000",
@@ -33,11 +33,11 @@
       "isEnabled": true,
       "name": "720p",
       "pattern": "(?i)\\b720p?\\b",
-      "tagColor": "#D9FFB000",
+      "tagColor": "#D915803D",
       "tagStyle": "filled and bordered",
       "textColor": "#FFFFFFFF",
       "type": "filter",
-      "borderColor": "#FFFFB000"
+      "borderColor": "#FF15803D"
     },
     {
       "groupId": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
@@ -46,11 +46,11 @@
       "isEnabled": true,
       "name": "DV",
       "pattern": "(?i)\\b(?:dv|dovi|dolby[ ._-]?vision)\\b",
-      "tagColor": "#D97B2FF7",
+      "tagColor": "#D916A34A",
       "tagStyle": "filled and bordered",
       "textColor": "#FFFFFFFF",
       "type": "filter",
-      "borderColor": "#FF7B2FF7"
+      "borderColor": "#FF16A34A"
     },
     {
       "groupId": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
@@ -59,11 +59,11 @@
       "isEnabled": true,
       "name": "HDR10+",
       "pattern": "(?i)^(?!.*\\b(?:dv|dovi|dolby[ ._-]?vision)\\b)(?=.*\\bhdr\\s*10\\s*(?:\\+|plus|p)\\b)",
-      "tagColor": "#D9C241FF",
+      "tagColor": "#D922C55E",
       "tagStyle": "filled and bordered",
       "textColor": "#FFFFFFFF",
       "type": "filter",
-      "borderColor": "#FFC241FF"
+      "borderColor": "#FF22C55E"
     },
     {
       "groupId": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
@@ -72,11 +72,11 @@
       "isEnabled": true,
       "name": "HDR10+ (Without DV)",
       "pattern": "(?i)(?:^|[^a-z0-9])hdr\\s*10\\s*(?:\\+|plus|p)(?=[^a-z0-9]|$)",
-      "tagColor": "#D9D946EF",
+      "tagColor": "#D934D399",
       "tagStyle": "filled and bordered",
       "textColor": "#FFFFFFFF",
       "type": "filter",
-      "borderColor": "#FFD946EF"
+      "borderColor": "#FF34D399"
     },
     {
       "groupId": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
@@ -85,11 +85,11 @@
       "isEnabled": true,
       "name": "HDR10",
       "pattern": "(?i)^(?!.*\\b(?:dv|dovi|dolby[ ._-]?vision)\\b)(?!.*\\bhdr\\s*10\\s*(?:\\+|plus|p)\\b)(?=.*\\bhdr\\s*10\\b)",
-      "tagColor": "#D9FF4D8D",
+      "tagColor": "#D94ADE80",
       "tagStyle": "filled and bordered",
       "textColor": "#FFFFFFFF",
       "type": "filter",
-      "borderColor": "#FFFF4D8D"
+      "borderColor": "#FF4ADE80"
     },
     {
       "groupId": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
@@ -98,11 +98,11 @@
       "isEnabled": true,
       "name": "HDR10 (Without DV)",
       "pattern": "(?i)^(?=.*\\b(?:dv|dovi|dolby[ ._-]?vision)\\b)(?=.*\\bhdr(?:\\s*10)?\\b)(?!.*\\bhdr\\s*10\\s*(?:\\+|plus|p)\\b).*",
-      "tagColor": "#D9FF5C5C",
+      "tagColor": "#D96EE7B7",
       "tagStyle": "filled and bordered",
       "textColor": "#FFFFFFFF",
       "type": "filter",
-      "borderColor": "#FFFF5C5C"
+      "borderColor": "#FF6EE7B7"
     },
     {
       "groupId": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
@@ -111,11 +111,11 @@
       "isEnabled": true,
       "name": "HDR",
       "pattern": "(?i)^(?!.*\\b(?:dv|dovi|dolby[ ._-]?vision)\\b)(?!.*\\bhdr\\s*10\\s*(?:\\+|plus|p)\\b)(?!.*\\bhdr\\s*10\\b)(?=.*\\bhdr\\b).*",
-      "tagColor": "#D9FF7A1A",
+      "tagColor": "#D986EFAC",
       "tagStyle": "filled and bordered",
       "textColor": "#FFFFFFFF",
       "type": "filter",
-      "borderColor": "#FFFF7A1A"
+      "borderColor": "#FF86EFAC"
     },
     {
       "groupId": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
@@ -124,11 +124,11 @@
       "isEnabled": true,
       "name": "SDR",
       "pattern": "(?i)^(?=.*(?:\\.(?:mkv|mp4|avi|mov|m4v|ts)\\b|\\b(?:x264|x265|xvid|h[ ._-]?264|h[ ._-]?265|hevc|avc|web[-_. ]?dl|webrip|blu[-_. ]?ray|bd[-_. ]?remux|bdremux|remux|bdrip|bdmux|dvd|dvdrip|hdtv|uhd|4k)\\b))(?!.*(?:^|[^A-Za-z0-9])(?:dovi|dv|dolby[ ._-]?vision|hdr10(?:\\+|plus|p)?|hdr[ ._-]?10[ ._-]?(?:\\+|plus|p)?|hdr|hlg)(?=$|[^A-Za-z0-9])).*$",
-      "tagColor": "#D922C55E",
+      "tagColor": "#D9A7F3D0",
       "tagStyle": "filled and bordered",
       "textColor": "#FFFFFFFF",
       "type": "filter",
-      "borderColor": "#FF22C55E"
+      "borderColor": "#FFA7F3D0"
     },
     {
       "groupId": "8e4b6f8e-2c1e-4f6b-9e8d-3f7a9d1c2e3f",
@@ -241,11 +241,11 @@
       "isEnabled": true,
       "name": "7.1 CH",
       "pattern": "(?i)(?=.*[^0-9][7-8][ .][0-1]\\b)(?!.*[^0-9]5[ .][0-1]\\b)(?!.*[^0-9]6[ .][0-1]\\b)(?!.*(?<!repac)[^0-9][1-4][ .][0-1]|\\\\b(Stereo|Mono)\\\\b)",
-      "tagColor": "#D9166534",
+      "tagColor": "#D91D63C2",
       "tagStyle": "filled and bordered",
       "textColor": "#FFFFFFFF",
       "type": "filter",
-      "borderColor": "#FF166534"
+      "borderColor": "#FF1D63C2"
     },
     {
       "groupId": "9f8e7d6c-3b2a-4f1e-9c8d-5a6b7e4f3d2c",
@@ -254,11 +254,11 @@
       "isEnabled": true,
       "name": "6.1 CH",
       "pattern": "(?i)(?=.*[^0-9]6[ .][0-1]\\b)(?!.*[^0-9][7-8][ .][0-1]\\b)(?!.*[^0-9]5[ .][0-1]\\b)(?!.*(?<!repac)[^0-9][1-4][ .][0-1]\\b|\\\\b(Stereo|Mono)\\\\b)",
-      "tagColor": "#D92F9E44",
+      "tagColor": "#D91299D5",
       "tagStyle": "filled and bordered",
       "textColor": "#FFFFFFFF",
       "type": "filter",
-      "borderColor": "#FF2F9E44"
+      "borderColor": "#FF1299D5"
     },
     {
       "groupId": "9f8e7d6c-3b2a-4f1e-9c8d-5a6b7e4f3d2c",
@@ -267,21 +267,21 @@
       "isEnabled": true,
       "name": "5.1 CH",
       "pattern": "(?i)(?=.*[^0-9]5[ .][0-1]\\b)(?!.*[^0-9]6[ .][0-1]\\b)(?!.*[^0-9][7-8][ .][0-1]\\b)(?!.*(?<!repac)[^0-9][1-4][ .][0-1]\\b|\\\\b(Stereo|Mono)\\\\b)",
-      "tagColor": "#D984CC16",
+      "tagColor": "#D914C8C8",
       "tagStyle": "filled and bordered",
       "textColor": "#FFFFFFFF",
       "type": "filter",
-      "borderColor": "#FF84CC16"
+      "borderColor": "#FF14C8C8"
     },
     {
-      "borderColor": "#FFDC2626",
+      "borderColor": "#FF6D28D9",
       "groupId": "3f2e1d0c-9b8a-4f7e-8d6c-5b4a39281716",
       "id": "5f758265-9c4c-5aa5-bd5f-547553cd993d",
       "imageURL": "https://raw.githubusercontent.com/nobnobz/Omni-Template-Bot-Bid-Raiser/main/Other/white%20regex%20tags/white_SEADEX.png",
       "isEnabled": true,
       "name": "SEADEX Release",
       "pattern": "(?i)(?:\\bseadex\\b|\u1d00\u029f\u1d1b\\s+\u0280\u1d07\u029f\u1d07\u1d00s\u1d07|\u0299\u1d07s\u1d1b\\s+\u0280\u1d07\u029f\u1d07\u1d00s\u1d07|alt\\s+release|best\\s+release)",
-      "tagColor": "#D9DC2626",
+      "tagColor": "#D96D28D9",
       "tagStyle": "filled and bordered",
       "textColor": "#FFFFFFFF",
       "type": "filter"
@@ -293,11 +293,11 @@
       "isEnabled": true,
       "name": "IMAX",
       "pattern": "(?i)\\bimax\\b",
-      "tagColor": "#D9F97316",
+      "tagColor": "#D98B5CF6",
       "tagStyle": "filled and bordered",
       "textColor": "#FFFFFFFF",
       "type": "filter",
-      "borderColor": "#FFF97316"
+      "borderColor": "#FF8B5CF6"
     }
   ],
   "groups": [
@@ -306,14 +306,14 @@
       "id": "550e8400-e29b-41d4-a716-446655440000",
       "isExpanded": true,
       "name": "Resolution",
-      "borderColor": "#FFFF8500"
+      "borderColor": "#FF166534"
     },
     {
       "color": "#FFFFFFFF",
       "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
       "isExpanded": true,
       "name": "Dynamic Range",
-      "borderColor": "#FFC241FF"
+      "borderColor": "#FF22C55E"
     },
     {
       "color": "#FFFFFFFF",
@@ -327,14 +327,14 @@
       "id": "9f8e7d6c-3b2a-4f1e-9c8d-5a6b7e4f3d2c",
       "isExpanded": true,
       "name": "Audio Channels",
-      "borderColor": "#FF2F9E44"
+      "borderColor": "#FF1D63C2"
     },
     {
       "color": "#FFFFFFFF",
       "id": "3f2e1d0c-9b8a-4f7e-8d6c-5b4a39281716",
       "isExpanded": true,
       "name": "Special Tags",
-      "borderColor": "#FFF97316"
+      "borderColor": "#FF7C3AED"
     }
   ]
 }
