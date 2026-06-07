@@ -97,7 +97,7 @@
       "imageURL": "https://raw.githubusercontent.com/9mousaa/BetterFormatter/main/images/4k.png",
       "isEnabled": true,
       "name": "4K",
-      "pattern": "(?i)^(?=.*(?:2160[pi]?|4k|uhd))(?!.*(?:1080[pi]?|720[pi]?))",
+      "pattern": "(?i)\\b2160[pi]?\\b",
       "tagColor": "#174A2A",
       "tagStyle": "filled",
       "textColor": "#FFFFFF",
