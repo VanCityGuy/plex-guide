@@ -586,19 +586,6 @@
       "type": "filter"
     },
     {
-      "borderColor": "#FF6A1B9A",
-      "groupId": "gst",
-      "id": "seadex-release",
-      "imageURL": "https://raw.githubusercontent.com/vowl313/NardBadges/refs/heads/main/tag-seadex.png",
-      "isEnabled": true,
-      "name": "SEADEX",
-      "pattern": "(?i)(?:\\u200b\\u200c\\u200d|\\b(?:seadex|best[\\s._-]?release|alt[\\s._-]?(?:best[\\s._-]?)?release)\\b|ᴀʟᴛ[\\s._-]?ʙᴇsᴛ[\\s._-]?ʀᴇʟᴇᴀsᴇ|ᴀʟᴛ[\\s._-]?ʀᴇʟᴇᴀsᴇ|ʙᴇsᴛ[\\s._-]?ʀᴇʟᴇᴀsᴇ)",
-      "tagColor": "#00000000",
-      "tagStyle": "filled and bordered",
-      "textColor": "#FFFFFF",
-      "type": "filter"
-    },
-    {
       "borderColor": "#FF5C6BC0",
       "groupId": "gst",
       "id": "edition-directors-cut",
